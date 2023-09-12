@@ -9,6 +9,8 @@ import { RouterProvider } from "react-router-dom";
 import Introduction from "./components/paths/Introduction";
 import Who from "./components/paths/Who";
 import What from "./components/paths/What";
+import Main from "./components/Main";
+
 
 function App() {
   const [data, setData] = useState(null);
@@ -51,6 +53,7 @@ function App() {
       <Header />
       <RouterProvider router={appRouter}></RouterProvider>
       <Footer />
+      <Main />
     </div>
   );
 }

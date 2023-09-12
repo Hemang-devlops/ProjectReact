@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import NavBar from "../NavBar/NavBar";
 import VideoPlayer from "../VideoPlayer/VideoPlayer";
+import Main from "../Main";
 
 export default function Who({ data }) {
   const [style, setStyle] = useState({
@@ -55,26 +56,7 @@ export default function Who({ data }) {
             </div>
           </div>
         </div>
-        <VideoPlayer
-          url="https://www.youtube.com/watch?v=LXb3EKWsInQ"
-          width={500}
-          height={500}
-        />
-        <VideoPlayer
-          url="https://www.youtube.com/watch?v=LXb3EKWsInQ"
-          width={500}
-          height={500}
-        />
-        <VideoPlayer
-          url="https://www.youtube.com/watch?v=LXb3EKWsInQ"
-          width={500}
-          height={500}
-        />
-        <VideoPlayer
-          url="https://www.youtube.com/watch?v=LXb3EKWsInQ"
-          width={500}
-          height={500}
-        />
+        <Main />
       </div>
     </div>
   );
