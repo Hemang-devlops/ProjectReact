@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
+import NavBar from "./components/NavBar/NavBar";
+import { value } from "./utils/mockData";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    // Simulate a fetch request with a promise
+    const fetchData = () => {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve(value);
+        }, 1000); // Simulate a delay
+      });
+    };
+
+    fetchData()
+      .then((response) => {
+        // Update the state with the fetched data
+        setData(response);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="relative min-h-screen">
+      <Header />
+      <NavBar data={data} />
+      <Footer />
     </div>
   );
 }
