@@ -3,6 +3,7 @@ import squares from "../../utils/logo/squares.png";
 
 export default function Header() {
   return (
+    //   Header component at top
     <div className="h-10 max-w-screen shadow-slate-100">
       <section className=" h-10 w-auto  mx-10 flex justify-between items-center">
         <div className="header pl-5 italic font-light">
