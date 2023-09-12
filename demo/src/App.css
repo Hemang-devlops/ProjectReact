@@ -1,0 +1,21 @@
+
+.whoContentWrapper{
+    position: absolute;
+    top: 51vh;
+    left: 90vh;
+    width: 52%;
+    color: #fff;
+}
+
+.whoVideoWrapper{
+    display: flex;
+}
+
+.whoFlexWrapper{
+    background-color: black;
+    color: #fff;
+}
+.whoFlexWrapper .content{
+ margin-top: 70px;
+ margin-left: 20px;
+}
