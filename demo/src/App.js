@@ -4,12 +4,30 @@ import Header from "./components/Header/Header";
 import NavBar from "./components/NavBar/NavBar";
 import { value } from "./utils/mockData";
 import { useEffect, useState } from "react";
+import { BrowserRouter, Router, createBrowserRouter } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
+import Introduction from "./components/paths/Introduction";
+import Who from "./components/paths/Who";
+import What from "./components/paths/What";
 
 function App() {
   const [data, setData] = useState(null);
-
+  const appRouter = createBrowserRouter([
+    {
+      path: "/",
+      element: <Introduction data={data} />,
+    },
+    {
+      path: "/who",
+      element: <Who data={data} />,
+    },
+    {
+      path: "/what",
+      element: <What data={data} />,
+    },
+  ]);
+  // Simulating a fetch request with a promise
   useEffect(() => {
-    // Simulate a fetch request with a promise
     const fetchData = () => {
       return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -20,7 +38,7 @@ function App() {
 
     fetchData()
       .then((response) => {
-        // Update the state with the fetched data
+        // Updating the state with the fetched data
         setData(response);
       })
       .catch((error) => {
@@ -31,7 +49,7 @@ function App() {
   return (
     <div className="relative min-h-screen">
       <Header />
-      <NavBar data={data} />
+      <RouterProvider router={appRouter}></RouterProvider>
       <Footer />
     </div>
   );
