@@ -1,16 +1,13 @@
 import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import NavBar from "./components/NavBar/NavBar";
 import { value } from "./utils/mockData";
 import { useEffect, useState } from "react";
-import { BrowserRouter, Router, createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
 import Introduction from "./components/paths/Introduction";
 import Who from "./components/paths/Who";
 import What from "./components/paths/What";
-import Main from "./components/Main";
-
 
 function App() {
   const [data, setData] = useState(null);
@@ -53,7 +50,6 @@ function App() {
       <Header />
       <RouterProvider router={appRouter}></RouterProvider>
       <Footer />
-      <Main />
     </div>
   );
 }

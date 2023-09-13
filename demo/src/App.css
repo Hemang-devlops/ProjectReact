@@ -1,21 +1,33 @@
-
-.whoContentWrapper{
-    position: absolute;
-    top: 51vh;
-    left: 90vh;
-    width: 52%;
-    color: #fff;
+/* Default styles for larger screens */
+/* to set text and video ratio we have used vanila css along with media queris it is same for who and what so just named for who as made that component first */
+.whoContentWrapper {
+  position: absolute;
+  top: 30vh;
+  left: 90vh;
+  width: 52%;
+  color: #fff;
 }
 
-.whoVideoWrapper{
-    display: flex;
+.whoVideoWrapper {
+  display: flex;
 }
 
-.whoFlexWrapper{
-    background-color: black;
-    color: #fff;
+.whoFlexWrapper {
+  background-color: black;
+  color: #fff;
 }
-.whoFlexWrapper .content{
- margin-top: 70px;
- margin-left: 20px;
+
+.whoFlexWrapper .content {
+  margin-top: 70px;
+  margin-left: 20px;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .whoContentWrapper {
+    display: none;
+  }
+  .whoFlexWrapper {
+    display: none; /* Hide the content on mobile screens */
+  }
 }

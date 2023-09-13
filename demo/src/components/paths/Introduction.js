@@ -3,6 +3,7 @@ import NavBar from "../NavBar/NavBar";
 import VideoPlayer from "../VideoPlayer/VideoPlayer";
 
 export default function Introduction({ data }) {
+  // introduction has video only so we called videPlayer only
   const [style, setStyle] = useState({
     width: "100%",
     height: "90vh",
